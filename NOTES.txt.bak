@@ -1,0 +1,35 @@
+setwd("C:\\Users\\spfeiffe\\OneDrive - Environmental Protection Agency (EPA)\\_mine\\notes_which_may_be_still_relevant\\Git_LFS") 
+
+git lfs install
+git init
+git branch -m master main
+echo (add files)
+git remote add origin "https://github.com/spfeiffe/learning_Git_LFS.git"
+git add "the_size_of_this_file_is_44_MB.csv"
+git add "the_size_of_this_file_is_89_MB.csv"
+git commit -m "test whether files less than 100 MB can be pushed successfully"
+git config http.postBuffer 1048576000
+git push -u origin main --verbose --progress
+echo "works, but takes HOURS"
+
+git lfs track "the_size_of_this_file_is_134_MB.csv"
+git add "the_size_of_this_file_is_134_MB.csv" 
+git add ".gitattributes"
+git commit -m "ok, correctly this time"
+git push -u origin main --verbose --progress
+
+git add "NOTES.txt"
+git add "NOTES.txt.bak"
+
+git lfs track "the_size_of_this_file_is_180_MB.csv"
+git add "the_size_of_this_file_is_180_MB.csv"
+git add ".gitattributes"
+git status
+
+
+
+git ls-files
+git hash-object "the_size_of_this_file_is_44_MB.csv"
+
+git lfs track "the_size_of_this_file_is_180_MB.csv"
+git lfs track "the_size_of_this_file_is_225_MB.csv"
